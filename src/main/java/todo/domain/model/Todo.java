@@ -3,6 +3,7 @@ package todo.domain.model;
 import java.io.Serializable;
 import java.util.Date;
 
+
 public class Todo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,35 +16,35 @@ public class Todo implements Serializable {
 
     private Date createdAt;
 
-	public String getTodoId() {
-		return todoId;
-	}
+    public String getTodoId() {
+        return todoId;
+    }
 
-	public void setTodoId(String todoId) {
-		this.todoId = todoId;
-	}
+    public void setTodoId(String todoId) {
+        this.todoId = todoId;
+    }
 
-	public String getTodoTitle() {
-		return todoTitle;
-	}
+    public String getTodoTitle() {
+        return todoTitle;
+    }
 
-	public void setTodoTitle(String todoTitle) {
-		this.todoTitle = todoTitle;
-	}
+    public void setTodoTitle(String todoTitle) {
+        this.todoTitle = todoTitle;
+    }
 
-	public boolean isFinished() {
-		return finished;
-	}
+    public boolean isFinished() {
+        return finished;
+    }
 
-	public void setFinished(boolean finished) {
-		this.finished = finished;
-	}
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 }
