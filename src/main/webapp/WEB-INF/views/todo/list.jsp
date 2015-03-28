@@ -7,6 +7,21 @@
 .strike {
 	text-decoration: line-through;
 }
+.alert {
+    border: 1px solid;
+}
+
+.alert-error {
+    background-color: #c60f13;
+    border-color: #970b0e;
+    color: white;
+}
+
+.alert-success {
+    background-color: #5da423;
+    border-color: #457a1a;
+    color: white;
+}
 </style>
 </head>
 <body>
