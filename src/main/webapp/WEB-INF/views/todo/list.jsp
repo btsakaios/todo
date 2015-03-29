@@ -7,23 +7,25 @@
 .strike {
 	text-decoration: line-through;
 }
+
 .alert {
-    border: 1px solid;
+	border: 1px solid;
 }
 
 .alert-error {
-    background-color: #c60f13;
-    border-color: #970b0e;
-    color: white;
+	background-color: #c60f13;
+	border-color: #970b0e;
+	color: white;
 }
 
 .alert-success {
-    background-color: #5da423;
-    border-color: #457a1a;
-    color: white;
+	background-color: #5da423;
+	border-color: #457a1a;
+	color: white;
 }
+
 .text-error {
-    color: #c60f13;
+	color: #c60f13;
 }
 </style>
 </head>
@@ -45,25 +47,25 @@
 			<c:forEach items="${todos}" var="todo">
 				<li><c:choose>
 						<c:when test="${todo.finished}">
-							<!-- (4) -->
 							<span class="strike"> <!-- (5) --> ${f:h(todo.todoTitle)}
 							</span>
 						</c:when>
 						<c:otherwise>
                             ${f:h(todo.todoTitle)}
                             <form:form
-                                action="${pageContext.request.contextPath}/todo/finish"
-                                method="post"
-                                modelAttribute="todoForm"
-                                cssStyle="display: inline-block;">
-                                <!-- (2) -->
-                                <form:hidden path="todoId"
-                                    value="${f:h(todo.todoId)}" />
-                                <input type="submit" name="finish"
-                                    value="Finish" />
-                            </form:form>
-                         </c:otherwise>
-					</c:choose></li>
+								action="${pageContext.request.contextPath}/todo/finish"
+								method="post" modelAttribute="todoForm"
+								cssStyle="display: inline-block;">
+								<form:hidden path="todoId" value="${f:h(todo.todoId)}" />
+								<input type="submit" name="finish" value="Finish" />
+							</form:form>
+						</c:otherwise>
+					</c:choose> <form:form action="${pageContext.request.contextPath}/todo/delete"
+						method="post" modelAttribute="todoForm"
+						cssStyle="display: inline-block;">
+						<form:hidden path="todoId" value="${f:h(todo.todoId)}" />
+						<input type="submit" value="Delete" />
+					</form:form></li>
 			</c:forEach>
 		</ul>
 	</div>
