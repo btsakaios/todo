@@ -22,6 +22,9 @@
     border-color: #457a1a;
     color: white;
 }
+.text-error {
+    color: #c60f13;
+}
 </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
 		<t:messagesPanel />
 		<form:form action="${pageContext.request.contextPath}/todo/create"
 			method="post" modelAttribute="todoForm">
-			<form:errors path="todoTitle" />
+			<form:errors path="todoTitle" cssClass="text-error" />
 			<form:input path="todoTitle" />
 			<input type="submit" value="Create Todo" />
 		</form:form>
