@@ -6,18 +6,38 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class TodoForm implements Serializable {
-    private static final long serialVersionUID = 1L;
+	// (1)
+	public static interface TodoCreate {
+	};
 
-    @NotNull
-    @Size(min = 1, max = 30)
-    private String todoTitle;
+	public static interface TodoFinish {
+	};
 
-    public String getTodoTitle() {
-        return todoTitle;
-    }
+	private static final long serialVersionUID = 1L;
 
-    public void setTodoTitle(String todoTitle) {
-        this.todoTitle = todoTitle;
-    }
+	// (2)
+	@NotNull(groups = { TodoFinish.class })
+	private String todoId;
+
+	// (3)
+	@NotNull(groups = { TodoCreate.class })
+	@Size(min = 1, max = 30, groups = { TodoCreate.class })
+	private String todoTitle;
+
+	public String getTodoId() {
+		return todoId;
+	}
+
+	public void setTodoId(String todoId) {
+		this.todoId = todoId;
+	}
+
+	public String getTodoTitle() {
+		return todoTitle;
+	}
+
+	public void setTodoTitle(String todoTitle) {
+		this.todoTitle = todoTitle;
+	}
 
 }
