@@ -6,20 +6,21 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class TodoForm implements Serializable {
-	// (1)
+
 	public static interface TodoCreate {
 	};
 
 	public static interface TodoFinish {
 	};
 
-	private static final long serialVersionUID = 1L;
+    public static interface TodoDelete {
+    }
 
-	// (2)
-	@NotNull(groups = { TodoFinish.class })
+    private static final long serialVersionUID = 1L;
+
+    @NotNull(groups = { TodoFinish.class, TodoDelete.class })
 	private String todoId;
 
-	// (3)
 	@NotNull(groups = { TodoCreate.class })
 	@Size(min = 1, max = 30, groups = { TodoCreate.class })
 	private String todoTitle;
